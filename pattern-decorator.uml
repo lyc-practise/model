@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.pattern.decorator.DecoratorB</OriginalElement>
+  <nodes>
+    <node x="206.5" y="89.0">com.pattern.decorator.AbstractDecorator</node>
+    <node x="297.5" y="168.0">com.pattern.decorator.DecoratorB</node>
+    <node x="74.21428571428572" y="168.0">com.pattern.decorator.DecoratorA</node>
+    <node x="10.5" y="89.0">com.pattern.decorator.ConcreteComponent</node>
+    <node x="200.5" y="0.0">com.pattern.decorator.Component</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.pattern.decorator.AbstractDecorator" target="com.pattern.decorator.Component">
+      <point x="-54.0" y="-14.5" />
+      <point x="233.5" y="69.0" />
+      <point x="250.5" y="69.0" />
+      <point x="-10.0" y="14.5" />
+    </edge>
+    <edge source="com.pattern.decorator.DecoratorA" target="com.pattern.decorator.AbstractDecorator">
+      <point x="29.5" y="-14.5" />
+      <point x="162.71428571428572" y="143.0" />
+      <point x="247.0" y="143.0" />
+      <point x="-40.5" y="14.5" />
+    </edge>
+    <edge source="com.pattern.decorator.ConcreteComponent" target="com.pattern.decorator.Component">
+      <point x="0.0" y="-14.5" />
+      <point x="98.5" y="59.0" />
+      <point x="230.5" y="59.0" />
+      <point x="-30.0" y="14.5" />
+    </edge>
+    <edge source="com.pattern.decorator.DecoratorB" target="com.pattern.decorator.AbstractDecorator">
+      <point x="-29.5" y="-14.5" />
+      <point x="40.5" y="14.5" />
+    </edge>
+    <edge source="com.pattern.decorator.DecoratorB" target="com.pattern.decorator.Component">
+      <point x="29.5" y="-14.5" />
+      <point x="386.0" y="143.0" />
+      <point x="382.0" y="143.0" />
+      <point x="382.0" y="49.0" />
+      <point x="310.5" y="49.0" />
+      <point x="50.0" y="14.5" />
+    </edge>
+    <edge source="com.pattern.decorator.DecoratorA" target="com.pattern.decorator.Component">
+      <point x="-29.5" y="-14.5" />
+      <point x="103.71428571428572" y="143.0" />
+      <point x="0.0" y="143.0" />
+      <point x="0.0" y="49.0" />
+      <point x="210.5" y="49.0" />
+      <point x="-50.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="81.0" y="94.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

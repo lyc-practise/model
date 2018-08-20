@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Tran">
+
+    <select id="queryByID" resultType="Tran" >
+            select * from tran where id = #{id}
+    </select>
+
+    <select id="queryList" resultType="Tran" parameterType="Tran" >
+            select * from tran
+    </select>
+
+    <insert id="insert" parameterType="Tran" >
+            <selectKey keyProperty="id" order="AFTER" keyColumn="id" />
+        insert into "tran" (name, type ) values (#{name} , #{type})
+    </insert>
+
+    <update id="update" parameterType="Tran">
+        update tran
+        <set>
+          update_time = current_timestamp,
+          <if test="name != null">
+              name = #{name},
+          </if>
+          <if test="type != null">
+              type = #{type},
+          </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="Tran">
+        delete from tran where id = #{id}
+    </delete>
+
+</mapper>
