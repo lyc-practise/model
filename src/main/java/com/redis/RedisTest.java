@@ -1,16 +1,28 @@
 package com.redis;
 
+
+import java.util.*;
+
 public class RedisTest {
 
-    public static void main(String[] args){
 
-        RedisService redisService = new RedisService();
+    private static String SOURCE_KEY = "COUPON";
+    private static RedisService redisService = new RedisService();
 
-        redisService.set("key", "xiaoxiao");
+    private static void initSource(int i){
+        Random random = new Random();
+        List array = new ArrayList();
+        while(array.size() < i){
+            String c = String.valueOf((char)random.nextInt(32));
+            if(!array.contains(c)){
+               array.add(c);
+            }
+        }
+        redisService.lSet(SOURCE_KEY, array);
 
-
-        System.out.println(redisService.get("key"));
     }
 
-
+    public static void main(String[] args) {
+        initSource(10);
+    }
 }

@@ -1,5 +1,6 @@
 package com.redis;
 
+import com.utils.PropertiesUtils;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import redis.clients.jedis.JedisPoolConfig;
@@ -15,10 +16,12 @@ import java.util.concurrent.TimeUnit;
  * autohor:yx
  */
 public class RedisService {
+
+    private static PropertiesUtils propertiesUtils = new PropertiesUtils("com-model.properties");
     private RedisTemplate<String, Object> redisTemplate;
 
-    private static final String host = "192.168.102.133";
-    private static final int port = 6379;
+    private static final String host = propertiesUtils.get("redis.host");
+    private static final int port = Integer.valueOf(propertiesUtils.get("redis.port"));
     private static final int timeout = 2000;
     private static final boolean userPool = true;
     private static int pool_max = 20;
@@ -37,8 +40,8 @@ public class RedisService {
         factory.setPort(port);
         factory.setTimeout(timeout);
         factory.setUsePool(false);
-//        factory.setPoolConfig(config);
-
+        factory.setPoolConfig(config);
+        factory.afterPropertiesSet();
         redisTemplate = new RedisTemplate<String, Object>();
         redisTemplate.setConnectionFactory(factory);
         redisTemplate.afterPropertiesSet();
@@ -535,6 +538,19 @@ public class RedisService {
         } catch (Exception e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    /**
+     * 移除N个值为value
+     * @param key 键
+     * @return 移除的个数
+     */
+    public void lClear(String key) {
+        try {
+            redisTemplate.opsForList().getOperations().delete(key);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
