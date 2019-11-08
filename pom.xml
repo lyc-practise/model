@@ -30,6 +30,24 @@
 
     <dependencies>
 
+<!--        <dependency>-->
+<!--            <groupId>de.twentyeleven.skysail</groupId>-->
+<!--            <artifactId>org.apache.poi-osgi</artifactId>-->
+<!--            <version>4.0.0</version>-->
+<!--            <type>pom</type>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+
         <!-- minio Dependency start -->
         <dependency>
             <groupId>asm</groupId>
